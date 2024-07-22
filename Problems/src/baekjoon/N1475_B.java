@@ -13,13 +13,15 @@ public class N1475_B {
 		int[] nums = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 		
 		for (int i = 0; i < room.length(); i++) {
-			int n = room.charAt(i);
+			int n = room.charAt(i) - '0';
 			if (n == 9) {
 				nums[6] += 1;
 			} else {
 				nums[n] += 1;
 			}
 		}
+		
+		nums[6] = (nums[6] / 2) + (nums[6] % 2);
 		
 		int max = Integer.MIN_VALUE;
 		
